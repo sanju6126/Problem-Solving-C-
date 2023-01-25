@@ -1,0 +1,276 @@
+// class student{
+// 	int age;
+// 	string name;        //data members
+// 	bool gender;
+	
+// };
+
+// int main(){
+// 	student a;
+// 	a.name = "sanju";
+
+// 	return 0;
+// }
+
+// //if u try to assign name to student "a" like that.....it will give an error because by default all the Data Members of the class are PRIVATE
+// // and private data members can't be accessed outside the class.
+
+// ****************************
+// ****************************
+
+// PUBLIC DATA MEMBER
+
+// SO TO ACCESS THE DATA MEMBERS , u need to write it as,
+
+// class student{
+// 	public:
+// 		int age;
+// 		string name;        //data members
+// 		bool gender;
+	
+// };
+
+// int main(){
+// 	student a;
+// 	a.name = "sanju";
+// 	a.age = 20;
+// 	a.gender = 1;
+
+// 	return 0;
+// }
+
+// //assigning the data members as PUBLIC will allow us to access the data members outside the class...
+
+
+// **************************************************************************************************
+// **************************************************************************************************
+
+// MULTIPLE OBJECTS TAKING ATTRIBUTES VALUE OF CLASS STUDENTS FROM USER.
+
+// //if u want to have multiple students...or objects.  Either u initialize each attributes of each object initially....like done above(a.name="sanju")
+// //OR   u make a array of type student and take the attributes value from the user.
+
+// class student{
+// 	public:
+// 		int age;
+// 		string name;        //data members
+// 		bool gender;
+	
+// };
+
+// int main(){
+// 	student arr[3];          //telling that there exist 3 objects of the class student
+	
+// 	for(int i=0;i<3;i++){
+// 		cout<<"name:";
+// 		cin>>arr[i].name;
+// 		cout<<"age:";
+// 		cin>>arr[i].age;
+// 		cout<<"gender:";
+// 		cin>>arr[i].gender;
+// 	}
+	
+
+// 	return 0;
+// }
+
+
+// ************************************************
+// ************************************************
+
+
+// // PRINTING THE ATTRIBUTES VALUE(DISPLAYING)
+
+// class student{
+// 	public:
+// 		int age;
+// 		string name;        //data members
+// 		bool gender;
+	
+// 		void printInfo(){
+		
+// 		}
+// };
+
+// int main(){
+// 	student arr[3];          
+	
+// 	for(int i=0;i<3;i++){
+// 		cout<<"name:";
+// 		cin>>arr[i].name;
+// 		cout<<"age:";
+// 		cin>>arr[i].age;
+// 		cout<<"gender:";
+// 		cin>>arr[i].gender;
+// 	}
+	
+// 	for(int i=0;i<n;i++){
+// 		arr[i].printInfo();
+// 	}
+
+// 	return 0;
+// }
+
+
+
+
+
+
+// //GETTER SETTER(treat this function as a normal function because wo ek normal function hote hai....bas wo private data member ke liye use hote hai)
+
+// //suppose ek class hai HERO and uska object hai RAMESH , ek private data member hai koi jaise ....int health....or usko koi value se initialize karna hai...
+// //Since private hai to usko class ke bahar se to access ni kar skte hai(to waha se usko initialize karne se koi faida ni hai).
+// //to isi liye humlog GETTER(function) and SETTER(function) ka use karte hai(particulaly usi data member ke liye).
+// //kyu ki , agar us data member ko agar ksi function me dal diye class ke andar to usko humlog access kar skte hai bahar se .. value paramenter me pas kar ke(input le ke user se ya apne se v)
+
+//  void setHealth(int h){
+// 	    health = h
+// 	}
+	
+// 	void getHealth(){
+// 		return health;
+// 	}
+
+// 	int main(){
+// 		HERO RAMESH;
+// 		ramesh.setHealth(70);
+
+// 	}
+
+
+
+
+// //STATIC ALLOCATION OF OBJECT
+	
+// 	Hero a;           	    //static allocation of memory
+// 	a.setHealth(50);		//intitializing value to the private data member
+// 	cout<<a.getHealth();
+
+// //DYNAMIC ALLOCATION OF OBJECT
+	
+// 	Hero *a = new Hero;	//dynamic allocation of memory
+// 	a->setHealth(80);		//initializing value to the private data member of the class
+// 	cout<<a->getHealth();
+	
+
+
+// **********************************************
+// **********************************************
+
+
+// //THIS keyword
+// 	class Hero{
+// 		private:
+// 			int health;
+// 		public:
+// 			int level;	
+			
+// 		Hero(int health){
+// 	***		//health = health;
+// 			this->health = health;			
+// 		}
+	
+// 	};
+	
+// 	int main(){
+// 		Hero h(50);    //parameterized constructor ko pas kar rahe hai value
+// 	}
+
+// //note: *** wala line kya show kar raha hai ki agar constructor ke parameter wla name same hai apna data member ka name ka....(jaise is case me data member health and parameter wala name v health hai)
+// //		to is case me kya hoga ki ek naya int type ka health varible banega (jo int health) or phir ***wala step me ...parameter wale health me data recieve kar ...phir usi wale variable me dal de rha hai(health = health)
+// //		 so, to avoid this happening...THIS keyword ka use kiya jata hai....THIS keyword jo hai...jo v apna current object hota hai uska address strore karta hai(jaise is case me object hai RAMESH...to THIS jo hai RAMESH ka address ko store kar rha hai)
+// //		TO agar hum chahte hai ki...parameter wala variable jo recieve kar rha hai usko ...RAMESH wala data member me dalne ka.....to jaise ki hmko pat hai...THIS current object ka address ko store karta hai....uska HEALTH wala data member me dalne k liye.....
+// //		uske aage THIS laga denge....(jo ki waha dikhaya gaya hai)
+
+
+
+// **************************************************
+// **************************************************
+
+
+
+// //STATIC KEYWORD
+
+// 	class Hero{
+// 		private:
+// 			int health;
+// 		public:
+// 			int level;	
+// 			static int time_to_complete;
+			
+	
+// 	};
+
+// 	int Hero :: time_to_complete = 5;
+	
+// 	int main(){
+// 		cout<<Hero::time_to_complete<<endl;    //printing the static variable
+
+// 		Hero h;    
+// 		cout<<h.time_to_complete<<endl;       //this won't give any error but there is no need of this method;
+		
+// 		Hero g;
+// 		g.time_to_complete = 10;		  // value changed
+// 		cout<<h.time_to_complete<<endl;      //if u want ot print this will print 10 in both cases(for h and g both)
+// 		cout<<g.time_to_complete<<endl;
+	
+// 	}
+
+
+
+// //Note: static data member does not need help of objects to be accessed .
+// //	  this data members belongs to class
+// //	  ye main function se pehle or class ke bahar initialize hota hai;
+// //	  automatically ye 0 se initialize hota hai
+
+// //suppose 2 object hai ek game ke HERO and ENENMY ...to ye jo staic data member hai TIME_TO_COMPLETE (game ka time) hai...ye to ksi pe dependent hai hi ni (ya bolo ki ye dono k liye common hai)
+
+
+
+// //STATIC FUNCTION
+// 	class Hero{
+// 		private:
+// 			int health;
+// 		public:
+// 			int level;	
+// 			static int time_to_complete;
+
+// 		static int random(){
+// 			return time_to_complete;
+// 		} 
+			
+	
+// 	};
+
+// 	int Hero :: time_to_complete = 5;
+	
+// 	int main(){
+// 		cout<<Hero::time_to_complete<<endl;    //printing the static variable
+
+// 		Hero h;    
+// 		cout<<h.time_to_complete<<endl;       //this won't give any error but there is no need of this method;
+		
+// 		cout<<Hero::random()<<endl;
+		
+// 	}
+	
+// //NOTE: it does not need the help of object.. to access it
+// //	  static function can only access static data members.
+// //	  THIS keyword is not applicable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
